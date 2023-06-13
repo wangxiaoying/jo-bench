@@ -20,3 +20,11 @@ psql -vdatadir="'/home/user/jo-bench'" -f ~/jo-bench/copy.sql
 ```
 
 NB! Deploying tested on database with C-locale.
+
+
+#### Load to MySQL
+```bash
+mysql --protocol tcp -h$HOST -P$PORT -u$USER -p$PASSWORD imdb < schema.sql
+# update the path of csv files in `copy.my.sql`
+mysql --local-infile=1 --protocol tcp -h$HOST -P$PORT -u$USER -p$PASSWORD imdb < copy.my.sql
+```
