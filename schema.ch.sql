@@ -21,7 +21,7 @@ CREATE TABLE aka_title (
     episode_of_id Nullable(integer),
     season_nr Nullable(integer),
     episode_nr Nullable(integer),
-    note text,
+    note Nullable(text),
     md5sum character varying(32)
 )engine MergeTree()
 PRIMARY KEY (id);
@@ -31,7 +31,7 @@ CREATE TABLE cast_info (
     person_id integer NOT NULL,
     movie_id integer NOT NULL,
     person_role_id Nullable(integer),
-    note text,
+    note Nullable(text),
     nr_order Nullable(integer),
     role_id integer NOT NULL
 )engine MergeTree()
@@ -109,7 +109,7 @@ CREATE TABLE movie_companies (
     movie_id integer NOT NULL,
     company_id integer NOT NULL,
     company_type_id integer NOT NULL,
-    note text
+    note Nullable(text)
 )engine MergeTree()
 PRIMARY KEY (id);
 
@@ -118,7 +118,7 @@ CREATE TABLE movie_info (
     movie_id integer NOT NULL,
     info_type_id integer NOT NULL,
     info text NOT NULL,
-    note text
+    note Nullable(text)
 )engine MergeTree()
 PRIMARY KEY (id);
 
@@ -127,7 +127,7 @@ CREATE TABLE movie_info_idx (
     movie_id integer NOT NULL,
     info_type_id integer NOT NULL,
     info text NOT NULL,
-    note text
+    note Nullable(text)
 )engine MergeTree()
 PRIMARY KEY (id);
 
@@ -164,7 +164,7 @@ CREATE TABLE person_info (
     person_id integer NOT NULL,
     info_type_id integer NOT NULL,
     info text NOT NULL,
-    note text
+    note Nullable(text)
 )engine MergeTree()
 PRIMARY KEY (id);
 
